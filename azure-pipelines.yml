@@ -10,14 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  buildConfiguration: 'Release'
+  buildConfiguration: 'SampleDotnetBuild'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- script: |
-    echo pwd
-  displayName: 'Second variable pass'
+
   
 - task: PublishBuildArtifacts@1
   inputs:
